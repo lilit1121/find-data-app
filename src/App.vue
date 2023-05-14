@@ -1,6 +1,9 @@
 
 <template>
   <TheHeader />
+  <!-- <div>
+    <img src="/assets/images/header.png" alt="">
+  </div> -->
   <DataCard />
   <TheFooter />
 </template>

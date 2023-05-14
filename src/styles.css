@@ -1,3 +1,17 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+@font-face {
+  font-family: 'Noto Sans';
+  src: url(@/assets/fonts/NotoSans-Regular.ttf);
+}
+
+body {
+   font-family: Noto-Sans;
+}
+
+
+  .main-green{
+    background: #C3E120;
+  }
