@@ -16,7 +16,7 @@
     <img src="../assets/images/BeefLamb_logo.png" alt="" class="pr-2.5">
     <h2 class="font-semibold text-sm">Beef & Lamb NZ</h2>
   </div>
- 
+
  </div>
 
 
@@ -38,3 +38,9 @@
   color: #6B7280;
 }
 </style>
+
+<script>
+export default {
+  name: 'datacard',
+};
+</script>

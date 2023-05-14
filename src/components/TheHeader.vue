@@ -7,8 +7,8 @@
     <img src="../assets/icons/logo.svg" alt="">
    </div>
     <div class="text-base font-normal">
-    <a href="" class="mr-8">Home</a>
-    <a href="" class="mr-8 nav_active_item">Explore data</a>
+    <a href="/" class="mr-8">Home</a>
+    <a href="/explore" class="mr-8 nav_active_item">Explore data</a>
     <a href="" class="mr-8">Learn</a>
     <a href="" class="mr-8">Tools & Resources</a>
     <a href="" class="mr-8">News</a>
@@ -21,13 +21,13 @@
    <div class="main-green	rounded-3xl py-2.5 px-5">
     <a href="">Sign Up</a>
    </div>
-  
+
   </div>
   </div>
-  
- 
-  
-  
+
+
+
+
 </div>
 </template>
 
