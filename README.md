@@ -8,4 +8,4 @@ This template should help get you started developing with Vue 3 in Vite. The tem
 
 Do first this
 
-tailwindcss -i ./src/input.css -o ./dist/output.css --watch
+npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch

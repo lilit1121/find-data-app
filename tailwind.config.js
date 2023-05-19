@@ -28,7 +28,9 @@ module.exports = {
         'snowy-day': '#f3f4f6',
         'thunderstorm': '#1f2937',
         'slate-gray': '#6B7280',
-        'royal-blue': '#3D409A' 
+        'royal-blue': '#3D409A', 
+        'grayish-blue': '#9CA3AF',
+        'gainsboro': '#E5E7EB'
       },
       spacing: {
         '95-percent': '95%',
