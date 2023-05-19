@@ -1,12 +1,12 @@
 
 
 <template>
-<div class="data_card w-80 rounded-2xl card_border mb-6 relative">
+<div class="data_card rounded-2xl card_border mb-6 relative">
   <div class="absolute top-3 right-3">
     <button class="bg-white rounded-2xl px-4 py-px mr-1.5 font-semibold text-sm">JSON</button>
     <button class="bg-white rounded-2xl px-4 py-px font-semibold  text-sm">CSV</button>
   </div>
-  <img src="../assets/images/card_img.png" alt="" class="rounded-t-2xl">
+  <img src="../assets/images/card_img.png" alt="" class="rounded-t-2xl w-full">
  <div class="p-4">
   <div class="text-lg">
     <h2 class="font-semibold">Beef & Lamb New Zealand: System and Policies</h2>

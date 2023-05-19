@@ -1,14 +1,10 @@
 
 <template>
   <TheHeader />
-  <div style="height: 330px">
-    <img
-      class="w-full absolute top-0 left-0 z-0"
-      src="@/assets/images/bg-image.jpg"
-      alt="background"
-    />
+  <div class="bg-[url('@/assets/images/bg-image.jpg')] w-full absolute top-0 left-0 z-0 bg-cover bg-no-repeat h-330"></div>
+  <div class="mt-238">  
+    <router-view ></router-view>
   </div>
-  <router-view></router-view>
   <TheFooter />
 </template>
 

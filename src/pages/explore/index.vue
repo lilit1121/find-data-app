@@ -1,10 +1,10 @@
 <template>
-  <div class="flex mt-7 pl-10 pr-7">
+  <div class="flex mt-7 pr-7">
     <div class="w-1/5">
       <Filter />
     </div>
-    <div class="w-4/5 mb-30 pl-7">
-      <div class="flex justify-between pr-6 pl-3 mb-6">
+    <div class="w-4/5 pl-7 my-30">
+      <div class="flex justify-between pr-4 pl-3 mb-6">
         <h2
           class="text-thunderstorm font-montserrat font-semibold text-2xl leading-7"
         >
@@ -25,11 +25,15 @@
       </div>
       <div>
         <div>
-          <ul class="flex flex-wrap">
-            <li class="px-3" v-for="item in paginatedItems" :key="item.id">
-              <router-link :to="'/explore/' + item.id"><DataCard /></router-link>
-            </li>
-          </ul>
+          <div class="flex flex-wrap">
+            <router-link
+              class="card"
+              v-for="item in paginatedItems"
+              :key="item.id"
+              :to="'/explore/' + item.id"
+              ><DataCard
+            /></router-link>
+          </div>
           <div class="pl-3 flex justify-between items-center">
             <span
               class="text-slate-gray font-noto-sans font-normal text-sm leading-snug"
@@ -77,37 +81,37 @@
 
 <script>
 import DataCard from "../../components/DataCard.vue";
-import {ref, computed} from "vue";
-import Filter from '../../components/Filter/index.vue'
+import { ref, computed } from "vue";
+import Filter from "../../components/Filter/index.vue";
 export default {
   components: {
     DataCard,
-    Filter
+    Filter,
   },
   setup() {
     const items = ref([
-        { id: 1 },
-        { id: 2 },
-        { id: 3 },
-        { id: 4 },
-        { id: 5 },
-        { id: 6 },
-        { id: 7 },
-        { id: 8 },
-        { id: 9 },
-        { id: 10 },
-        { id: 11 },
-        { id: 12 },
-        { id: 13 },
-        { id: 14 },
-        { id: 15 },
-        { id: 16 },
-        { id: 17 },
-        { id: 18 },
-      ])
+      { id: 1 },
+      { id: 2 },
+      { id: 3 },
+      { id: 4 },
+      { id: 5 },
+      { id: 6 },
+      { id: 7 },
+      { id: 8 },
+      { id: 9 },
+      { id: 10 },
+      { id: 11 },
+      { id: 12 },
+      { id: 13 },
+      { id: 14 },
+      { id: 15 },
+      { id: 16 },
+      { id: 17 },
+      { id: 18 },
+    ]);
 
-    const currentPage = ref(1)  
-    const itemsPerPage = ref(13)
+    const currentPage = ref(1);
+    const itemsPerPage = ref(13);
 
     const paginatedItems = computed(() => {
       const startIndex = (currentPage.value - 1) * itemsPerPage.value;
@@ -126,15 +130,14 @@ export default {
     };
 
     const nextPage = () => {
-      console.log(currentPage, totalPages)
-      if (currentPage.value < totalPages) {
+      console.log(currentPage.value , totalPages.value)
+      if (currentPage.value < totalPages.value) {
         currentPage.value++;
       }
-      console.log(currentPage, totalPages)
     };
 
     const gotoPage = (page) => {
-      if (page >= 1 && page <= totalPages) {
+      if (page >= 1 && page <= totalPages.value) {
         currentPage.value = page;
       }
     };
@@ -147,8 +150,15 @@ export default {
       nextPage,
       gotoPage,
       totalPages,
-      paginatedItems
-    }
+      paginatedItems,
+    };
   },
 };
 </script>
+
+<style>
+  .card{
+    width: calc(100% / 3 - 24px);
+    margin: 0 12px;
+  }
+</style>
