@@ -32,9 +32,10 @@ module.exports = {
       },
       spacing: {
         '95-percent': '95%',
+        '40.5-percent': '45.5%',
         '6.9-percent': '6.9%',
         '30': '30px',
-      }
+      },
     },
   },
   plugins: [],

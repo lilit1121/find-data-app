@@ -1,7 +1,7 @@
 
 
 <template>
-<div class="mt-4 mx-6 ">
+<div class="mt-4 mx-6 relative z-10">
   <div class="nav_menu bg-white py-4 px-10 rounded-2xl shadow flex justify-between	items-center">
    <div>
     <img src="../assets/icons/logo.svg" alt="">
