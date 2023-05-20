@@ -30,7 +30,9 @@ module.exports = {
         'slate-gray': '#6B7280',
         'royal-blue': '#3D409A', 
         'grayish-blue': '#9CA3AF',
-        'gainsboro': '#E5E7EB'
+        'gainsboro': '#E5E7EB',
+        'violet' : '#3D409A',
+        'dark-slate-gray': '#374151'
       },
       spacing: {
         '95-percent': '95%',

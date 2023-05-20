@@ -38,16 +38,24 @@
     </button>
     <div>
       <Disclosure v-for="(item, index) in filterParams" :key="index">
-        <DisclosureButton class="w-full flex justify-between items-center py-5 border-t border-gainsboro">
-          <p class="text-slate-gray font-noto-sans font-bold text-base leading-6">{{ item.name }}</p>
-          <img src="@/assets/icons/blue-arrow-left.svg" alt="arrow icon" />
+        <DisclosureButton
+          class="w-full flex justify-between items-center py-5 border-t border-gainsboro"
+        >
+          <p
+            class="text-slate-gray font-noto-sans font-bold text-base leading-6"
+          >
+            {{ item.name }}
+          </p>
+          <img class="arrow-left" src="@/assets/icons/blue-arrow-left.svg" alt="arrow icon" />
         </DisclosureButton>
-        <DisclosurePanel>
-          <div>
-            <input type="checkbox" />
-            <span>{{ item.subItems.name }}</span>
+        <DisclosurePanel class="max-h-80 overflow-auto">
+          <div class="flex justify-between items-center mb-6" v-for="(subItem, index) in item.subItems" :key="index">
+            <div class="flex items-start">
+              <purple-checkbox :checked="index === 1" :id="`item${index}`"></purple-checkbox>
+              <label class="font-normal text-base leading-relaxed text-dark-slate-gray w-9/12 ml-2 cursor-pointer" :for="`item${index}`">{{ subItem.name }}</label>
+            </div>
+            <span class="font-normal text-sm leading-4 text-dark-slate-gray">{{ subItem.quantity }}</span>
           </div>
-          <span>{{ item.subItems.quantity }}</span>
         </DisclosurePanel>
       </Disclosure>
     </div>
@@ -66,6 +74,7 @@ import {
   DisclosurePanel,
 } from "@headlessui/vue";
 import { ref } from "vue";
+import purpleCheckbox from '../Custom checkbox/purple.vue'
 
 export default {
   components: {
@@ -76,7 +85,8 @@ export default {
     TabPanel,
     Disclosure,
     DisclosureButton,
-    DisclosurePanel
+    DisclosurePanel,
+    purpleCheckbox
   },
   setup() {
     let activeTab = ref("Website content");
@@ -158,5 +168,17 @@ export default {
 .show-result-btn.active {
   background: #c3e120;
   color: #1f2937;
+}
+
+button[data-headlessui-state="open"] p{
+  color: #282679;
+}
+
+.arrow-left{
+  transition: all 0.2s linear;
+}
+
+button[data-headlessui-state="open"] .arrow-left{
+  transform: rotate(90deg);
 }
 </style>
